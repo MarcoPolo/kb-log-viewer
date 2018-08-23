@@ -1,0 +1,15 @@
+{
+  "name": "kb-log",
+  "version": "1.0.0",
+  "description": "To read keybase log files",
+  "main": "index.js",
+  "license": "MIT",
+  "author": "marcopolo",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "moment": "^2.22.2"
+  },
+  "scripts": {
+    "read": "node index.js"
+  }
+}

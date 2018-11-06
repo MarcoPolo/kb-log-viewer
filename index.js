@@ -34,7 +34,7 @@ const parseTime = line => chalk.grey(moment(line[1]).format('M/D/YY, h:mm:ss.SSS
 
 const renderInfo = line => [line[0], parseTime(line), line[2]]
 
-const renderAction = line => [chalk.green(line[0]), parseTime(line), ...renderActionMoreInfo(line[2].split(/:\s+/))]
+const renderAction = line => [chalk.green(line[0]), parseTime(line), ...renderActionMoreInfo(line[2].match(/type: (\S*):\s+([\s\S]*)/))]
 
 const renderActionMoreInfo = ([_, type, payload]) => [chalk.bold(chalk.green(type)), ...renderActionPayload(JSON.parse(payload))]
 const renderActionPayload = ({type, ...rest}) => [chalk.magenta(JSON.stringify(rest))]

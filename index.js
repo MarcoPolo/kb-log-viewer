@@ -30,7 +30,7 @@ const parseLine = (line) => {
   }
 }
 
-const parseTime = line => chalk.grey(moment(line[1]).format('M/D/YY, h:mm:ss.SSSS'))
+const parseTime = line => chalk.white(moment.parseZone(line[1]).format('M/D/YY, HH:mm:ss.SSSS'))
 
 const renderInfo = line => [line[0], parseTime(line), line[2]]
 
